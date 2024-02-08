@@ -1,0 +1,8 @@
+i, j;
+{
+    input i;
+    output i;
+    j = i+1;
+    output j;
+}
+1

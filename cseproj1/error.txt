@@ -1,0 +1,77 @@
+inputbuf.cpp: In member function ‘std::string InputBuffer::UngetString(std::string)’:
+inputbuf.cpp:43:23: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::__cxx11::basic_string<char>::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+   43 |     for (int i = 0; i < s.size(); i++)
+      |                     ~~^~~~~~~~~~
+lexer.cpp: In member function ‘Token LexicalAnalyzer::GetToken()’:
+lexer.cpp:183:15: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<Token>::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+  183 |     if (index == tokenList.size()){       // return end of file if
+      |         ~~~~~~^~~~~~~~~~~~~~~~~~~
+lexer.cpp: In member function ‘Token LexicalAnalyzer::peek(int)’:
+lexer.cpp:206:19: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<Token>::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+  206 |     if (peekIndex > (tokenList.size()-1)) { // if peeking too far
+      |         ~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~
+In file included from structs.h:8,
+                 from my_LexicalAnalyzer.h:4,
+                 from my_LexicalAnalyzer.cpp:2:
+parser.h:17:20: error: ‘REG_node’ was not declared in this scope
+   17 | std::unordered_set<REG_node> Match_One_Char(std::unordered_set<REG_node> S, std::string& c);
+      |                    ^~~~~~~~
+parser.h:17:28: error: template argument 1 is invalid
+   17 | std::unordered_set<REG_node> Match_One_Char(std::unordered_set<REG_node> S, std::string& c);
+      |                            ^
+parser.h:17:28: error: template argument 2 is invalid
+parser.h:17:28: error: template argument 3 is invalid
+parser.h:17:28: error: template argument 4 is invalid
+parser.h:17:64: error: ‘REG_node’ was not declared in this scope
+   17 | std::unordered_set<REG_node> Match_One_Char(std::unordered_set<REG_node> S, std::string& c);
+      |                                                                ^~~~~~~~
+parser.h:17:72: error: template argument 1 is invalid
+   17 | std::unordered_set<REG_node> Match_One_Char(std::unordered_set<REG_node> S, std::string& c);
+      |                                                                        ^
+parser.h:17:72: error: template argument 2 is invalid
+parser.h:17:72: error: template argument 3 is invalid
+parser.h:17:72: error: template argument 4 is invalid
+parser.h:25:17: error: ‘TokenStruct’ was not declared in this scope
+   25 |     std::vector<TokenStruct> parsedTokens; //storing tokens
+      |                 ^~~~~~~~~~~
+parser.h:25:28: error: template argument 1 is invalid
+   25 |     std::vector<TokenStruct> parsedTokens; //storing tokens
+      |                            ^
+parser.h:25:28: error: template argument 2 is invalid
+parser.h:37:5: error: ‘REG’ does not name a type
+   37 |     REG* parse_expr(Token& t);
+      |     ^~~
+my_LexicalAnalyzer.cpp: In member function ‘int my_LexicalAnalyzer::match(REG, std::string, int)’:
+my_LexicalAnalyzer.cpp:29:39: error: cannot convert ‘std::unordered_set<REG_node>’ to ‘int’
+   29 |             resNodes = Match_One_Char(inputNodes, s);
+      |                                       ^~~~~~~~~~
+      |                                       |
+      |                                       std::unordered_set<REG_node>
+In file included from structs.h:8,
+                 from my_LexicalAnalyzer.h:4,
+                 from my_LexicalAnalyzer.cpp:2:
+parser.h:17:74: note:   initializing argument 1 of ‘int Match_One_Char(int, std::string&)’
+   17 | std::unordered_set<REG_node> Match_One_Char(std::unordered_set<REG_node> S, std::string& c);
+      |                                             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+my_LexicalAnalyzer.cpp: In member function ‘Token my_LexicalAnalyzer::my_GetToken()’:
+my_LexicalAnalyzer.cpp:47:16: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::__cxx11::basic_string<char>::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+   47 |     while (pos < inputText.size() && !isalnum(inputText[pos])){
+      |            ~~~~^~~~~~~~~~~~~~~~~~
+my_LexicalAnalyzer.cpp:60:31: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::__cxx11::basic_string<char>::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+   60 |     if (new_pos == pos && pos < this->inputText.size()){
+      |                           ~~~~^~~~~~~~~~~~~~~~~~~~~~~~
+parser.cpp: In member function ‘void Parser::check_namesakes()’:
+parser.cpp:296:23: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<TokenStruct>::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+  296 |     for (int i = 0; i < parsedTokens.size() - 1; i++){
+      |                     ~~^~~~~~~~~~~~~~~~~~~~~~~~~
+parser.cpp:297:27: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<TokenStruct>::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+  297 |         for (int j = i; j < parsedTokens.size(); j++){
+      |                         ~~^~~~~~~~~~~~~~~~~~~~~
+parser.cpp: In member function ‘void Parser::check_epsilon()’:
+parser.cpp:312:23: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<TokenStruct>::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+  312 |     for (int i = 0; i < parsedTokens.size(); i++){
+      |                     ~~^~~~~~~~~~~~~~~~~~~~~
+parser.cpp: In member function ‘REG* Parser::parse_expr(Token&)’:
+parser.cpp:156:26: warning: ‘t_ptr’ may be used uninitialized [-Wmaybe-uninitialized]
+  156 |             t_ptr->start = t_ptr1->start;
+      |             ~~~~~~~~~~~~~^~~~~~~~~~~~~~~
